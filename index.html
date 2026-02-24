@@ -8,13 +8,27 @@
 </head>
 <body>
     
-    <div class="alert-box" id = "alert">alert
-        <button onclick = "document.getElementById('alert').style.display = 'none';">닫기</button>
+    <div class="alert-box" id = "alert"> <p id="p-tag">alert</p>
+        <button onclick = "alert('none')">닫기</button>
     </div>
-    <button onclick = "document.getElementById('alert').style.display = 'block';">버튼</button>
+
+
+
+    <button onclick="testB('아이디')">버튼1</button>
+    <button onclick="testB('비밀번호')">버튼2</button>
 
     <script>
        
+        function alert(x){
+            document.getElementById('alert').style.display = x;
+        }
+
+        function testB(x) {
+            document.getElementById('alert').style.display = 'block';
+            document.getElementById('p-tag').innerHTML = x + '를 입력하세요';
+        }
+        
+
     </script>
 
 </body>
