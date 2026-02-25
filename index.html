@@ -1,35 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-    
-    <div class="alert-box" id = "alert"> <p id="p-tag">alert</p>
-        <button onclick = "alert('none')">닫기</button>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand">Navbar</span>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+    <button type="button" class="btn btn-primary">로그인</button>
+
+    <div class="black-bg hide">
+        <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <button class="btn btn-danger" id="close">닫기</button>
+        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
 
-
-    <button onclick="testB('아이디')">버튼1</button>
-    <button onclick="testB('비밀번호')">버튼2</button>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous">
+        </script>
 
     <script>
-       
-        function alert(x){
-            document.getElementById('alert').style.display = x;
-        }
 
-        function testB(x) {
-            document.getElementById('alert').style.display = 'block';
-            document.getElementById('p-tag').innerHTML = x + '를 입력하세요';
-        }
-        
+        $('.navbar-toggler').click(function () {
+            $('.list-group').toggleClass('show')
+        });
+
+        $('.btn').eq(0).click(function () {
+            $('.black-bg').removeClass('hide')
+        });
+
+        $('.btn').eq(1).click(function () {
+            $('.black-bg').addClass('hide')
+        });
 
     </script>
 
+
 </body>
+
 </html>
