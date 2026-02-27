@@ -16,9 +16,21 @@
     <div class="black-bg">
         <div class="white-bg">
             <h4>로그인하세요</h4>
-            <button class="btn btn-danger" id="close">닫기</button>
+
+            <form action="success.html">
+                <div class="my-3">
+                    <input type="text" class="form-control" id="id-input">
+                </div>
+                <div class="my-3">
+                    <input type="password" class="form-control" id="pw-input">
+                </div>
+                <button type="submit" class="btn btn-primary" id="login-send">전송</button>
+                <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form>
+
         </div>
     </div>
+
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
@@ -39,7 +51,7 @@
 
 
 
-    <button type="button" class="btn btn-primary">로그인</button>
+    <button type="button" class="btn btn-primary" id="login-btn">로그인</button>
 
 
 
@@ -57,13 +69,34 @@
             $('.list-group').toggleClass('show')
         });
 
-        $('.btn').eq(0).click(function () {
+        $('#close').click(function () {
             $('.black-bg').removeClass('show-modal')
-        }); //로그인 하세요 버튼
+        });
 
-        $('.btn').eq(1).click(function () {
+        $('#login-btn').click(function () {
             $('.black-bg').addClass('show-modal')
-        }); //로그인 닫기 버튼
+        });
+
+
+        $('form').on('submit', function (e) {
+
+            const inputId = $('#id-input');
+            const inputPw = $('#pw-input');
+
+            if (inputId.val() === "") {
+                alert("id를 입력해주세요.")
+                e.preventDefault();
+            } else if (inputPw.val() === "") {
+                alert("pw를 입력해주세요.")
+                e.preventDefault();
+            } else if (inputPw.val().length < 6) {
+                alert("pw는 6자 이상입니다.")
+                e.preventDefault();
+            }
+
+        });
+
+
 
 
 
