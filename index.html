@@ -13,6 +13,7 @@
 
 <body>
 
+
     <div class="black-bg">
         <div class="white-bg">
             <h4>로그인하세요</h4>
@@ -97,9 +98,48 @@
         });
 
 
+        function 삼육구게임(e) {
+            if(e % 3 == 0) {
+                console.log("박수");
 
+                if(e % 9 == 0) {
+                    console.log("박수");
+                    
+                }
 
+            } else {
+                console.log("다음");
+                
+            }
+        };
 
+        삼육구게임(1);
+
+        function 합격여부(i,y) {
+            if( i + y >= 120 && i >= 40 && y >= 40) {
+                console.log("합격");
+            } else {
+                console.log("불합격");
+            }
+
+            if (y > 100 || y < 0 || i > 100 || i < 0) {
+                alert('범위 벗어남')
+            }
+        };
+
+        
+        합격여부(1111,23);
+
+        function 응용1(e) {
+            if( e % 10 == 3 || e % 10 == 6 || e % 10 == 9) {
+                console.log("박수");
+            } else {
+                console.log("다음");
+            };
+            
+        };
+
+        응용1(13);
 
     </script>
 
