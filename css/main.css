@@ -6,6 +6,11 @@
     display: none;
 }
 
+.dark {
+    background-color: black;
+    color: white;
+}
+
 .list-group {
     display: none;
 }

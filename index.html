@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body id="body">
 
 
     <div class="black-bg">
@@ -36,6 +36,7 @@
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <span class="navbar-brand">Navbar</span>
+            <span class="badge bg-dark" id="dark-mode">Dark 🔄</span>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -97,49 +98,23 @@
 
         });
 
+        let darkMode = 0;
 
-        function 삼육구게임(e) {
-            if(e % 3 == 0) {
-                console.log("박수");
+      $('#dark-mode').on('click', function(e){
+        darkMode++;
+        console.log(darkMode);
 
-                if(e % 9 == 0) {
-                    console.log("박수");
-                    
-                }
+        if(darkMode % 2 == 0) {
+            $('#dark-mode').html('Dark 🔄')
+        } else {
+            $('#dark-mode').html('Light 🔄');
+        }
 
-            } else {
-                console.log("다음");
-                
-            }
-        };
+      });
 
-        삼육구게임(1);
+      
 
-        function 합격여부(i,y) {
-            if( i + y >= 120 && i >= 40 && y >= 40) {
-                console.log("합격");
-            } else {
-                console.log("불합격");
-            }
 
-            if (y > 100 || y < 0 || i > 100 || i < 0) {
-                alert('범위 벗어남')
-            }
-        };
-
-        
-        합격여부(1111,23);
-
-        function 응용1(e) {
-            if( e % 10 == 3 || e % 10 == 6 || e % 10 == 9) {
-                console.log("박수");
-            } else {
-                console.log("다음");
-            };
-            
-        };
-
-        응용1(13);
 
     </script>
 
