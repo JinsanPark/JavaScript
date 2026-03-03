@@ -100,19 +100,17 @@
 
         let darkMode = 0;
 
-      $('#dark-mode').on('click', function(e){
-        darkMode++;
-        console.log(darkMode);
+        $('#dark-mode').on('click', function (e) {
+            darkMode++;
+            console.log(darkMode);
 
-        if(darkMode % 2 == 0) {
-            $('#dark-mode').html('Dark 🔄')
-        } else {
-            $('#dark-mode').html('Light 🔄');
-        }
+            if (darkMode % 2 == 0) {
+                $('#dark-mode').html('Dark 🔄')
+            } else {
+                $('#dark-mode').html('Light 🔄');
+            }
 
-      });
-
-      
+        });
 
 
 
